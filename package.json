@@ -1,0 +1,22 @@
+{
+  "name": "torrematch",
+  "version": "1.0.0",
+  "description": "this application helps you comapare and match developers of intrest\u001b[D\u001b[D\u001b[De\u001b[F",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omivrex/torrematch.git"
+  },
+  "author": "Rex Omiv",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/omivrex/torrematch/issues"
+  },
+  "homepage": "https://github.com/omivrex/torrematch#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
