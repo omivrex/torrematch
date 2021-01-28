@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/master.css">
-    <link rel="shortcut icon" href="./images/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/master.css">
+    <link rel="shortcut icon" href="../images/icon.png">
     <title>TorreMatch.com</title>
 </head>
 <body>
@@ -21,16 +21,17 @@
         <h1>WELLCOME TO TORRE MATCH</h1>
         <span class="about">We help you compare and match developers of your interest with ease.</span>
         <button id="startButn" onclick="displayForm()">START</button>
-        <form id="form">
+        <div id="form">
             <span class="label">Developer 1</span>
             <input type="text" id="dev1" placeholder="INPUT DEVELOPER'S USERNAME" required>
             <span class="label">Developer 2</span>
             <input type="text" id="dev2" placeholder="INPUT DEVELOPER'S USERNAME" required>
             <span id="cancel" title="cancel" onclick="cancel()">cancel</span>
-            <button id="compare">COMPARE</button>
-        </form>
+            <button id="compare" onclick="getDev()">COMPARE</button>
+        </div>
     </div>
 
-    <script src="./scripts/design.js"></script>
+    <script src="../scripts/design.js"></script>
+    <script src="../scripts/compareReqScript.js"></script>
 </body>
 </html>
