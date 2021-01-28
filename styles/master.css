@@ -149,7 +149,7 @@ form {
     left: 27%;
     top: 20%;
     color: #eee;
-    /* display: none; */
+    display: none;
     background-color: #565741d6;
     box-shadow: 0px 0px 4px 0;
 }
