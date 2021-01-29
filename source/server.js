@@ -1,6 +1,5 @@
 'use strict';
 const express = require('express')
-const url = require('url');
 const bodyParser = require('body-parser');
 const path = require('path');
 
@@ -21,9 +20,7 @@ app.get('/', (req, res) => {
 })
 
 app.post('/getDevData', (req, res) => {
-  req.body.dev1 = req.body.dev1.replace('https://bio.torre.co', '') +'?column=resume'
-  req.body.dev2 = req.body.dev2.replace('https://bio.torre.co', '') +'?column=resume'
-  infoGetter.eng([req.body.dev1, req.body.dev2])
+  infoGetter.eng([req.body.dev1, req.body.dev2], res)
 })
 
 app.listen(80)

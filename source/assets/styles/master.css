@@ -20,7 +20,7 @@ nav {
     align-items: center;
     justify-content: center;
     border-bottom: 1px solid #a39f3c;
-    background-color: #777;
+    background-color: #2a2d2d;
 }
 
 nav img {
@@ -209,4 +209,117 @@ h1 {
     cursor: pointer;
     font-size: 1.4em;
     text-align: center;
+}
+
+.resultWrapper {
+  position: absolute;
+  width: 55rem;
+  height: 33rem;
+  top: 4em;
+  left: 12em;
+  background-color: #565847;
+  border: 1px solid #eee;
+}
+
+#resultWrapperCloseButn {
+  font-family: sans-serif;
+  font-size: 1.3em;
+  position: absolute;
+  color: #eee;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 0;
+  width: 1.3em;
+  height: 1.3em;
+  text-align: center;
+  cursor: pointer;
+  left: 98.5%;
+  top: -2.3%;
+}
+
+.devDet {
+  width: 45%;
+  left: 3.5%;
+  position: relative;
+  margin-right: 2.5%;
+  height: 18rem;
+  top: 1.5rem;
+  display: inline-block;
+  flex: 1;
+}
+
+.devDet:first-child  {
+  border-right: 1px solid #eee;
+}
+
+.thumb {
+  width: 2rem;
+  position: absolute;
+  height: 2rem;
+  border-radius: 50%;
+}
+
+.name {
+  position: absolute;
+  color: #eee;
+  font-size: 1.5em;
+  left: 3rem;
+  top: 0.1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.name>a {
+  color: inherit;
+  border: none;
+  text-decoration: none;
+}
+
+.statBox {
+  flex: 3;
+  position: absolute;
+  height: 12.2rem;
+  width: 54rem;
+  left: 0.5rem;
+  top: 20rem;
+  box-shadow: 0 0 1px 1px #c9d04b;
+}
+
+.dataBox {
+  height: 12rem;
+  display: inline-block;
+  width: 26.9rem;
+  position: relative;
+  display: inline-table;
+}
+
+.dataHeader {
+  color: #eee;
+  font-size: 1.5rem;
+  left: 4%;
+  top: 0.95rem;
+  position: relative;
+}
+
+.details {
+  list-style-type: none;
+  color: #eee;
+  font-size: 2em;
+  top: 3rem;
+  position: relative;
+  font-family: system-ui;
+  left: 2.7rem;
+  margin-bottom: 0.2rem;
+}
+
+.matchTags {
+  left: 4%;
+  position: absolute;
+  border: none;
+  width: 9rem;
+  position: relative;
+  display: block;
+  color: #eee;
+  margin-bottom: 0.2rem;
+  top: 1.5rem;
+  padding: 3px;
+  font-size: 1rem;
 }

@@ -22,17 +22,18 @@
         <h1>WELLCOME TO TORRE MATCH</h1>
         <span class="about">We help you compare and match developers of your interest with ease.</span>
         <button id="startButn" onclick="displayForm()">START</button>
-        <div id="form">
+        <form id="form" onsubmit="getDev()" method="post">
             <span class="label">Developer 1</span>
-            <input type="text" id="dev1" placeholder="INPUT DEVELOPER'S USERNAME" required>
+            <input type="text" id="dev1" placeholder="INPUT DEVELOPER'S URL" required>
             <span class="label">Developer 2</span>
-            <input type="text" id="dev2" placeholder="INPUT DEVELOPER'S USERNAME" required>
+            <input type="text" id="dev2" placeholder="INPUT DEVELOPER'S URL" required>
             <span id="cancel" title="cancel" onclick="cancel()">cancel</span>
-            <button id="compare" onclick="getDev()">COMPARE</button>
-        </div>
+            <button id="compare" type="submit">COMPARE</button>
+        </form>
     </div>
 
     <script src="../scripts/design.js"></script>
     <script src="../scripts/compareReqScript.js"></script>
+    <script src="../scripts/xhrRenderer.js"></script>
 </body>
 </html>

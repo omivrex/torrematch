@@ -2,14 +2,21 @@
 exports.main = function (dataArray) {
   return {
     matchResult: analyzer.matchFunc(dataArray),
-    comparizimResult: analyzer.compareFunc(dataArray)
+    comparisonResult: analyzer.compareFunc(dataArray),
+    developerImgTumb: analyzer.addThumb(dataArray),
+    names: [dataArray[0].person.name, dataArray[1].person.name],
+    profHeader: [dataArray[0].person.professionalHeadline, dataArray[1].person.professionalHeadline],
+    stats: [dataArray[0].stats, dataArray[1].stats]
   }
 };
 
 const analyzer = {
   matchFunc: function (dataArray) {
-    return createMatchObject(matchByInterest(dataArray), matchByPersonalityRes(dataArray), matchByLocation(dataArray), matchByLanguages(dataArray))
-  },
+    return createMatchObject(
+      matchByInterest(dataArray),
+      matchByLocation(dataArray),
+      matchByLanguages(dataArray)
+)},
 
   compareFunc: function (dataArray) {
     const propsToCompare = [
@@ -28,54 +35,33 @@ const analyzer = {
 
     return createComObject(compResultArray)
   },
+
+  addThumb: function (dataArray) {
+    return {
+      thumb1: dataArray[0].person.pictureThumbnail,
+      thumb2: dataArray[1].person.pictureThumbnail
+    };
+  }
 };
 
-function matchByInterest(dataArray) {
+function search(bigArray, smallArray, prop) {
   let value = 0
+  bigArray.forEach((itemInBigArray) => {
+    if (smallArray.find(item => item[prop] ===  itemInBigArray[prop])) {
+        value += 1
+    }
+  });
+  return ((value/bigArray.length)*100).toFixed(1);
+}
+
+function matchByInterest(dataArray) {
   const dev1interest = dataArray[0].interests
   const dev2interest = dataArray[1].interests
-  let biggerNoOfInterests
   if (dev1interest.length >= dev2interest.length) {
-    biggerNoOfInterests = dev1interest.length
-    for (let x = 0; x < biggerNoOfInterests; x++) {
-      if (dev2interest.find(interest => interest.name ===  dev1interest[x].name)) {
-        value += 1
-      }
-    }
+    return search(dev1interest, dev2interest, 'name')
   } else {
-    biggerNoOfInterests = dev2interest.length
-    for (let x = 0; x < biggerNoOfInterests; x++) {
-      if (dev1interest.find(interest => interest.name ===  dev2interest[x].name)) {
-        value += 1
-      }
-    }
+    return search(dev2interest, dev1interest, 'name')
   }
-  let totalNoOfInterestEval = dev1interest.length + dev2interest.length
-  console.log(value);
-  console.log(biggerNoOfInterests);
-  return ((value/totalNoOfInterestEval)*100).toFixed(2);
-}
-
-function matchByPersonalityRes(dataArray) {
-  let value
-  let meanScores = []
-  dataArray.forEach((dev) => {
-    meanScores.push(sumanalysis(dev.personalityTraitsResults.analyses))
-  });
-  value = Math.abs(meanScores[0] - meanScores[1])
-  console.log(value.toFixed(2));
-  return value.toFixed(2);
-}
-
-function sumanalysis(devPersonality) {
-  let devMeanScore = 0
-  let analysis = 0
-  devPersonality.forEach((character) => {
-    analysis += parseFloat(character.analysis)
-    devMeanScore = analysis/devPersonality.length
-  });
-  // console.log(devMeanScore)
-  return devMeanScore;
 }
 
 function matchByLocation(dataArray) {
@@ -87,33 +73,18 @@ function matchByLocation(dataArray) {
 }
 
 function matchByLanguages(dataArray) {
-  let value = 0
   const dev1language = dataArray[0].languages
   const dev2language = dataArray[1].languages
-  let biggerNoOfLanguages
   if (dev1language.length >= dev2language.length) {
-    biggerNoOfLanguages = dev1language.length
-    for (let x = 0; x < biggerNoOfLanguages; x++) {
-      if (dev1language.find(language => language.language ===  dev1language[x].language)) {
-        value += 1
-      }
-    }
+    return search(dev1language, dev2language, 'language')
   } else {
-    biggerNoOfLanguages = dev2language.length
-    for (let x = 0; x < biggerNoOfLanguages; x++) {
-      if (dev1language.find(language => language.language ===  dev2language[x].language)) {
-        value += 1
-      }
-    }
+    return search(dev2language, dev1language, 'language')
   }
-  console.log(value);
-  return ((value/biggerNoOfLanguages)*100).toFixed(2);
 }
 
-function createMatchObject(interestRes, personalityRes, locationRes, languageRes) {
+function createMatchObject(interestRes, locationRes, languageRes) {
   return {
     interestRes: interestRes,
-    personalityRes: personalityRes,
     locationRes: locationRes,
     languageRes: languageRes,
   }
@@ -121,10 +92,12 @@ function createMatchObject(interestRes, personalityRes, locationRes, languageRes
 
 const compResultArray = []
 function compare(prop, dataArray) {
-  console.log(prop, dataArray[0][prop].length, dataArray[1][prop].length);
   let value = (dataArray[0][prop].length/dataArray[1][prop].length)*100
-  if (!isNaN(value)) {
+  if (!isNaN(value) && value != Infinity) {
     compResultArray.push((value.toFixed(1)))
+  } else if (value == Infinity) {
+    // console.log(value);
+    compResultArray.push((dataArray[0][prop].length.toString()))
   } else {
     compResultArray.push('0.0')
   }

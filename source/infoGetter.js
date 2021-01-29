@@ -1,17 +1,20 @@
 'use strict';
 const https = require('https');
 const compareAndMatchHandler = require('./compareAndMatchHandler');
-const devsData = []
 
-exports.eng = function (data) {
+exports.eng = main
+
+let responseObj;
+function main(data, response) {
   data.forEach((devPath) => {
     getDevInfo(devPath)
   });
+  responseObj = response
 }
 
-function getDevInfo(devPath) {
-    https.get({
-      host: '35.161.89.198', // torre api IP address
+async function getDevInfo(devPath) {
+    await https.get({ // I used this to fix the CORS error
+      host: '35.161.89.198', // torre IP address
       path: devPath,
       port: 443,
       method: 'GET',
@@ -26,17 +29,22 @@ function getDevInfo(devPath) {
        pushInfo(JSON.parse(info))
      })
 
-      let error = false
       res.on('err', (err) => {
-        error = true
         console.log(err);
       })
     })
 }
 
-function pushInfo(info) {
+let devsData = []
+async function pushInfo(info) {
   devsData.push(info)
+  // console.log(devsData);
   if (devsData.length === 2) {
-    compareAndMatchHandler.main(devsData)
+    await sendRes(compareAndMatchHandler.main(devsData))
+    devsData = []
   }
+}
+
+function sendRes(responseData) {
+  responseObj.send(responseData)
 }
