@@ -1,24 +1,33 @@
 'use strict';
-module.exports = {
+exports.main = function (dataArray) {
+  return {
+    matchResult: analyzer.matchFunc(dataArray),
+    comparizimResult: analyzer.compareFunc(dataArray)
+  }
+};
+
+const analyzer = {
   matchFunc: function (dataArray) {
-    let interestRes = matchByInterest(dataArray)
-    let personalityRes = matchByPersonalityRes(dataArray)
-    let locationRes = matchByLocation(dataArray)
-    let languageRes = matchByLanguages(dataArray)
-    let matchRes = createMatchObject(interestRes, personalityRes, locationRes, languageRes)
-    console.log(matchRes);
+    return createMatchObject(matchByInterest(dataArray), matchByPersonalityRes(dataArray), matchByLocation(dataArray), matchByLanguages(dataArray))
   },
 
-  // compareFunc: function (dataArray) {
-  //   let awardRes = compareByAwards(dataArray)
-  //   let strengthRes = compareByStrengths(dataArray)
-  //   let experienceRes = compareByExperiences(dataArray)
-  //   let educationRes = compareByEducation(dataArray)
-  //   let jobRes = compareByJobs(dataArray)
-  //   let projectRes = compareByProjects(dataArray)
-  //   let publicationRes = compareByPublications(dataArray)
-  //   createComObject(awardRes, strengthRes, experienceRes, educationRes, jobRes, projectRes, publicationRes)
-  // },
+  compareFunc: function (dataArray) {
+    const propsToCompare = [
+      "awards",
+      "strengths",
+      "experiences",
+      "education",
+      "jobs",
+      "projects",
+      "publications",
+    ]
+
+    propsToCompare.forEach((prop) => {
+      compare(prop, dataArray)
+    });
+
+    return createComObject(compResultArray)
+  },
 };
 
 function matchByInterest(dataArray) {
@@ -29,7 +38,7 @@ function matchByInterest(dataArray) {
   if (dev1interest.length >= dev2interest.length) {
     biggerNoOfInterests = dev1interest.length
     for (let x = 0; x < biggerNoOfInterests; x++) {
-      if (dev1interest.find(interest => interest.name ===  dev1interest[x].name)) {
+      if (dev2interest.find(interest => interest.name ===  dev1interest[x].name)) {
         value += 1
       }
     }
@@ -54,8 +63,8 @@ function matchByPersonalityRes(dataArray) {
     meanScores.push(sumanalysis(dev.personalityTraitsResults.analyses))
   });
   value = Math.abs(meanScores[0] - meanScores[1])
-  console.log(value);
-  return value;
+  console.log(value.toFixed(2));
+  return value.toFixed(2);
 }
 
 function sumanalysis(devPersonality) {
@@ -107,5 +116,28 @@ function createMatchObject(interestRes, personalityRes, locationRes, languageRes
     personalityRes: personalityRes,
     locationRes: locationRes,
     languageRes: languageRes,
+  }
+}
+
+const compResultArray = []
+function compare(prop, dataArray) {
+  console.log(prop, dataArray[0][prop].length, dataArray[1][prop].length);
+  let value = (dataArray[0][prop].length/dataArray[1][prop].length)*100
+  if (!isNaN(value)) {
+    compResultArray.push((value.toFixed(1)))
+  } else {
+    compResultArray.push('0.0')
+  }
+}
+
+function createComObject(compResultArray) {
+  return {
+    awardRes: compResultArray[0],
+    strengthRes: compResultArray[1],
+    experienceRes: compResultArray[2],
+    educationRes: compResultArray[3],
+    jobRes: compResultArray[4],
+    projectRes: compResultArray[5],
+    publicationRes: compResultArray[6]
   }
 }

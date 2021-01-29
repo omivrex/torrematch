@@ -37,6 +37,6 @@ function getDevInfo(devPath) {
 function pushInfo(info) {
   devsData.push(info)
   if (devsData.length === 2) {
-    compareAndMatchHandler.matchFunc(devsData)
+    compareAndMatchHandler.main(devsData)
   }
 }
