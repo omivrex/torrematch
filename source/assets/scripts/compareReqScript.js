@@ -1,3 +1,4 @@
+'use strict'
 const dev1Url = document.getElementById('dev1')
 const dev2Url = document.getElementById('dev2')
 

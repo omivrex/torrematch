@@ -4,6 +4,7 @@ const url = require('url');
 const bodyParser = require('body-parser');
 const path = require('path');
 
+const appEng = require('./appEng');
 const app = express()
 const urlencodedParser = bodyParser.urlencoded({extended: false});
 
@@ -20,7 +21,9 @@ app.get('/', (req, res) => {
 })
 
 app.post('/getDevData', (req, res) => {
-  console.log(req.body.dev1);
+  req.body.dev1 = req.body.dev1.replace('https://bio.torre.co', '')
+  req.body.dev2 = req.body.dev2.replace('https://bio.torre.co', '')
+  appEng.eng([req.body.dev1, req.body.dev2])
 })
 
 app.listen(80)
