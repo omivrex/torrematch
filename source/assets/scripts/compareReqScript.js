@@ -19,7 +19,7 @@ function getDev() {
   let devsToCompare = {dev1: formatDevUrl(dev1Url.value), dev2: formatDevUrl(dev2Url.value)}
   $.ajax('/getDevData', {
     success: (response) => {
-      console.log(response)
+      // console.log(response)
       renderData(response)
     },
     error: (xhr, status, error) => {

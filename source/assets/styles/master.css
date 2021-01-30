@@ -12,7 +12,7 @@ body {
 nav {
     position: fixed;
     height: 5vh;
-    width: 100vw;
+    width: 100%;
     z-index: 5;
     top: 0%;
     left: 0%;
@@ -112,7 +112,7 @@ h1 {
     padding-bottom: 0.2em;
     display: block;
     position: relative;
-    left: 6vw;
+    left: 5rem;
     top: 6vh;
     margin-bottom: 3.7rem;
 }
@@ -144,8 +144,8 @@ h1 {
 
 #form {
     position: absolute;
-    width: 40vw;
-    height: 50vh;
+    width: 34rem;
+    height: 19rem;
     left: 30%;
     top: 20%;
     color: #eee;
@@ -157,8 +157,8 @@ h1 {
 
 #dev1 {
     position: absolute;
-    width: 28vw;
-    height: 6vh;
+    width: 25rem;
+    height: 2rem;
     text-align: left;
     font-size: 1.8vw;
     font-family: inherit;
@@ -170,8 +170,8 @@ h1 {
 
 #dev2 {
     position: absolute;
-    width: 28vw;
-    height: 6vh;
+    width: 25rem;
+    height: 2rem;
     text-align: left;
     font-size: 1.8vw;
     font-family: inherit;
@@ -187,8 +187,8 @@ h1 {
     border: none;
     left: 58%;
     top: 81%;
-    width: 11vw;
-    height: 6vh;
+    width: 11rem;
+    height: 2.6rem;
     background-color: #7e57c2;
     color: white;
     cursor: pointer;
@@ -201,8 +201,8 @@ h1 {
     border: none;
     left: 15%;
     top: 81%;
-    width: 11vw;
-    height: 5.3vh;
+    width: 11rem;
+    height: 2.3rem;
     padding-top: 7px;
     background-color: #e9361e;
     color: white;
@@ -366,4 +366,46 @@ h1 {
   display: block;
   top: -4.4rem;
   left: 5rem;
+}
+
+@media screen and (max-width: 768px) {
+  #pageHeader {
+    height: 137.4rem;
+    width: 180rem;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  #form {
+    width: 55rem;
+    height: 47rem;
+    left: 7%;
+  }
+  .label {
+    font-size: 4.5em;
+    top: 15vh;
+    margin-bottom: 9.7rem;
+  }
+  #dev1 {
+    width: 40rem;
+    height: 7rem;
+    font-size: 3.8em;
+  }
+  #dev2 {
+    width: 40rem;
+    height: 7rem;
+    font-size: 3.8em;
+  }
+
+  #compare {
+    width: 21rem;
+    height: 6.3rem;
+    font-size: 4.4em;
+  }
+
+  #cancel {
+    width: 18rem;
+    height: 6.3rem;
+    font-size: 4.4em;
+  }
 }

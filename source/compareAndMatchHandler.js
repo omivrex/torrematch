@@ -100,8 +100,8 @@ function compare(prop, dataArray) {
   }
 
   let values = [
-    Math.floor((dataArray[0][prop].length/divisor)*100),
-    Math.floor((dataArray[1][prop].length/divisor)*100)
+    Math.round((dataArray[0][prop].length/divisor)*100),
+    Math.round((dataArray[1][prop].length/divisor)*100)
   ]
 
   values.forEach((value, i) => {
