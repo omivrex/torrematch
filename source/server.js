@@ -1,4 +1,5 @@
 'use strict';
+const port = process.env.PORT || 5000
 const express = require('express')
 const bodyParser = require('body-parser');
 const path = require('path');
@@ -25,5 +26,5 @@ app.post('/getDevData', (req, res) => {
   }
 })
 
-app.listen(80)
+app.listen(port)
 console.log('server successfully started ...');
