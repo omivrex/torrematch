@@ -1,7 +1,7 @@
+const resultWrapper = $('#resultWrapper')[0]
+
 function renderData(data) {
-  document.body.innerHTML += '<div class="resultWrapper">'
-          +'<span id="resultWrapperCloseButn" onclick = cancel()>x</span>'
-        +'<div class="devDet">'
+  resultWrapper.innerHTML += '<div class="devDet">'
           +'<img src="'+data.developerImgTumb.thumb2+'" alt="" class="thumb">'
           +'<span class="name"> <a href="">'+ data.names[1] +'</a></span>'
           +'<li class = "details"><span>Strengths: <span><span>'+ data.stats[1].strengths +'<span></li>'
@@ -29,5 +29,6 @@ function renderData(data) {
 
           +'</div>'
         +'</div>'
-      +'</div>'
+
+        resultWrapper.style.display = 'block'
 }

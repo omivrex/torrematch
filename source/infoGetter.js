@@ -28,17 +28,15 @@ async function getDevInfo(devPath) {
       res.on('end', () => {
        pushInfo(JSON.parse(info))
      })
-
-      res.on('err', (err) => {
-        console.log(err);
-      })
+    }).on('error', (err) => {
+      console.log(err);
+      // responseObj.send({err: "couldn't connect to Torre's Server"})
     })
 }
 
 let devsData = []
 async function pushInfo(info) {
   devsData.push(info)
-  // console.log(devsData);
   if (devsData.length === 2) {
     await sendRes(compareAndMatchHandler.main(devsData))
     devsData = []

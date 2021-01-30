@@ -20,7 +20,9 @@ app.get('/', (req, res) => {
 })
 
 app.post('/getDevData', (req, res) => {
-  infoGetter.eng([req.body.dev1, req.body.dev2], res)
+  if (req.body.dev1 != '' || req.body.dev1 === undefined && req.body.dev1 != '' || req.body.dev1 === undefined) {
+    infoGetter.eng([req.body.dev1, req.body.dev2], res)
+  }
 })
 
 app.listen(80)

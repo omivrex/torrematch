@@ -146,7 +146,7 @@ h1 {
     position: absolute;
     width: 40vw;
     height: 50vh;
-    left: 27%;
+    left: 30%;
     top: 20%;
     color: #eee;
     display: none;
@@ -211,7 +211,7 @@ h1 {
     text-align: center;
 }
 
-.resultWrapper {
+#resultWrapper {
   position: absolute;
   width: 55rem;
   height: 33rem;
@@ -219,6 +219,7 @@ h1 {
   left: 12em;
   background-color: #565847;
   border: 1px solid #eee;
+  display: none
 }
 
 #resultWrapperCloseButn {
@@ -234,6 +235,14 @@ h1 {
   cursor: pointer;
   left: 98.5%;
   top: -2.3%;
+}
+
+.errors {
+  color: #c78e8e;
+  font-size: 3em;
+  text-align: center;
+  position: absolute;
+  top: 3em;
 }
 
 .devDet {

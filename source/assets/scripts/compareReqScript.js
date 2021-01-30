@@ -1,5 +1,5 @@
-const dev1Url = document.getElementById('dev1')
-const dev2Url = document.getElementById('dev2')
+const dev1Url = $('#dev1')[0]
+const dev2Url = $('#dev2')[0]
 
 const getDevAjax = new XMLHttpRequest()
 
@@ -17,14 +17,17 @@ function formatDevUrl(url) {
 function getDev() {
   event.preventDefault()
   let devsToCompare = {dev1: formatDevUrl(dev1Url.value), dev2: formatDevUrl(dev2Url.value)}
-  console.log(devsToCompare);
-  getDevAjax.onreadystatechange = () => {
-    if (getDevAjax.readyState === 4) {
-      renderData(JSON.parse(getDevAjax.responseText))
-      console.log(JSON.parse(getDevAjax.responseText));
-    }
-  }
-  getDevAjax.open('POST', '/getDevData')
-  getDevAjax.setRequestHeader("Content-type", 'application/json');
-  getDevAjax.send(JSON.stringify(devsToCompare))
+  $.ajax('/getDevData', {
+    success: (response) => {
+      console.log(response);
+      renderData(response)
+    },
+    error: (xhr, status, error) => {
+      console.log(error);
+      resultWrapper.innerHTML += '<span class="errors">Error: Couldn\'t reach server at the moment are you offline</span>'
+    },
+    type: 'POST',
+    contentType: 'application/json',
+    data: JSON.stringify(devsToCompare)
+  })
 }

@@ -1,10 +1,10 @@
-const form = document.getElementById('form')
-const dev1 = document.getElementById('dev1')
-const dev2 = document.getElementById('dev2')
+const form = $('#form')[0]
 
 function cancel() {
-    console.log('dkjk');
     event.target.parentElement.style.display = 'none'
+    if (event.target.parentElement === resultWrapper) {
+      resultWrapper.innerHTML = ''
+    }
     dev1.value = ''
     dev2.value = ''
 }

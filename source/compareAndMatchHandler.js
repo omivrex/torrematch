@@ -96,7 +96,6 @@ function compare(prop, dataArray) {
   if (!isNaN(value) && value != Infinity) {
     compResultArray.push((value.toFixed(1)))
   } else if (value == Infinity) {
-    // console.log(value);
     compResultArray.push((dataArray[0][prop].length.toString()))
   } else {
     compResultArray.push('0.0')
