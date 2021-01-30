@@ -1,12 +1,13 @@
 const form = $('#form')[0]
 
 function cancel() {
-    event.target.parentElement.style.display = 'none'
-    if (event.target.parentElement === resultWrapper) {
-      resultWrapper.innerHTML = ''
+    if (event.target === $("#resultWrapperCloseButn")[0]) {
+      resultWrapper.style.display = 'none'
+    } else {
+      event.target.parentElement.style.display = 'none'
+      dev1.value = ''
+      dev2.value = ''
     }
-    dev1.value = ''
-    dev2.value = ''
 }
 
 function displayForm() {

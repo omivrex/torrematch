@@ -92,14 +92,24 @@ function createMatchObject(interestRes, locationRes, languageRes) {
 
 const compResultArray = []
 function compare(prop, dataArray) {
-  let value = (dataArray[0][prop].length/dataArray[1][prop].length)*100
-  if (!isNaN(value) && value != Infinity) {
-    compResultArray.push((value.toFixed(1)))
-  } else if (value == Infinity) {
-    compResultArray.push((dataArray[0][prop].length.toString()))
+  let divisor
+  if (dataArray[0][prop].length >= dataArray[1][prop].length) {
+    divisor = dataArray[0][prop].length
   } else {
-    compResultArray.push('0.0')
+    divisor = dataArray[1][prop].length
   }
+
+  let values = [
+    Math.floor((dataArray[0][prop].length/divisor)*100),
+    Math.floor((dataArray[1][prop].length/divisor)*100)
+  ]
+
+  values.forEach((value, i) => {
+    if (value === Infinity) {
+      value = 0
+    }
+  })
+  compResultArray.push(values)
 }
 
 function createComObject(compResultArray) {

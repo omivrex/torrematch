@@ -304,7 +304,7 @@ h1 {
   color: #eee;
   font-size: 1.5rem;
   left: 4%;
-  top: 0.95rem;
+  top: -0.05rem;
   position: relative;
 }
 
@@ -331,4 +331,41 @@ h1 {
   top: 1.5rem;
   padding: 3px;
   font-size: 1rem;
+}
+
+.barChart {
+  height: 2rem;
+  position: relative;
+  top: -0.5rem;
+  display: inline-block;
+  margin-right: 5rem;
+  margin-bottom: 0.5rem
+}
+
+.chartLabel {
+  color: #eee;
+  left: 4rem;
+  font-size: 1em;
+  padding: 1rem;
+  top: 0rem;
+}
+
+.dev1Bar {
+  background-color: #5fc556;
+  /* width: 8rem; */
+  height: 0.5rem;
+  position: relative;
+  display: block;
+  top: -4.4rem;
+  left: 5rem;
+}
+
+.dev2Bar {
+  background-color: #ff9800;
+  /* width: 4rem; */
+  height: 0.5rem;
+  position: relative;
+  display: block;
+  top: -4.4rem;
+  left: 5rem;
 }

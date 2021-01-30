@@ -1,9 +1,10 @@
-f5e9c09 was omivrex, 69 seconds ago, message: created teh comparisim script to fixed some bugs within the compareReqScript also created a scrit for rendering the data obtained from server
-269b0cc was omivrex, 12 hours ago, message: created the compare function to be able to compare developers
-528b473 was omivrex, 14 hours ago, message: created the match function and the different functions to match developers
-6ba6ea1 was omivrex, 19 hours ago, message: made modifications to server to be able to get dvelopers data for commparisim
-4b293d2 was omivrex, 27 hours ago, message: created AJAX script
-3d28c19 was omivrex, 31 hours ago, message: reorgnization of files and creation of server
+4f4fa33 was omivrex, 85 seconds ago, message: added jQuery to handle the ajaxx request and added a function to render error messages fixed some server side bugs with connection
+f5e9c09 was omivrex, 8 hours ago, message: created teh comparisim script to fixed some bugs within the compareReqScript also created a scrit for rendering the data obtained from server
+269b0cc was omivrex, 20 hours ago, message: created the compare function to be able to compare developers
+528b473 was omivrex, 22 hours ago, message: created the match function and the different functions to match developers
+6ba6ea1 was omivrex, 27 hours ago, message: made modifications to server to be able to get dvelopers data for commparisim
+4b293d2 was omivrex, 35 hours ago, message: created AJAX script
+3d28c19 was omivrex, 2 days ago, message: reorgnization of files and creation of server
 7336145 was omivrex, 2 days ago, message: made correction
 6871f12 was Rex Omiv, 2 days ago, message: Add files via upload
 8144136 was Rex Omiv, 2 days ago, message: Initial commit
