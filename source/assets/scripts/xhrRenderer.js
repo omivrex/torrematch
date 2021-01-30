@@ -2,9 +2,16 @@ const {Component} = React
 // import ReactDOM from ./react-dom.js
 
 const resultWrapper = $('#resultWrapper')[0]
-
+let dd;
 function renderData(data) {
-
+  dd = data.comparisonResult
+  console.log(data.comparisonResult.strengthRes[1])
+  console.log(Math.round(data.comparisonResult.strengthRes[0])/100)
+  console.log(Math.round(data.comparisonResult.educationRes[0])/100)
+  console.log(Math.round(data.comparisonResult.experienceRes[0])/100)
+  console.log(Math.round(data.comparisonResult.jobRes[0])/100)
+  console.log(Math.round(data.comparisonResult.publicationRes[0])/100)
+  console.log(Math.round(data.comparisonResult.projectRes[0])/100)
   class ResultComp extends Component {
     render() {
       return (
@@ -37,38 +44,38 @@ function renderData(data) {
               <span className="dataHeader">Comparisim:</span>
                 <div className="barChart">
                   <span className="chartLabel label">Strengths</span>
-                  <span className="dev1Bar" style={{width: ((data.comparisonResult.strengthRes[0]/100) * 8)+'rem'}} ></span>
-                  <span className="dev2Bar" style={{width: ((data.comparisonResult.strengthRes[1]/100) * 8)+'rem'}} ></span>
+                  <span className="dev1Bar" style={{width: Math.round((data.comparisonResult.strengthRes[1]/100) * 8)+'rem'}} ></span>
+                  <span className="dev2Bar" style={{width: Math.round((data.comparisonResult.strengthRes[0]/100) * 8)+'rem'}} ></span>
                 </div>
                 <div className="barChart">
                   <span className="chartLabel label">Education</span>
-                  <span className="dev1Bar" style={{width: ((data.comparisonResult.educationRes[0]/100) * 8)+'rem'}} ></span>
-                  <span className="dev2Bar" style={{width: ((data.comparisonResult.educationRes[1]/100) * 8)+'rem'}} ></span>
+                  <span className="dev1Bar" style={{width: Math.round((data.comparisonResult.educationRes[1]/100) * 8)+'rem'}} ></span>
+                  <span className="dev2Bar" style={{width: Math.round((data.comparisonResult.educationRes[0]/100) * 8)+'rem'}} ></span>
                 </div>
                 <div className="barChart">
                   <span className="chartLabel label">Experiences</span>
-                  <span className="dev1Bar" style={{width: ((data.comparisonResult.experienceRes[0]/100) * 8)+'rem'}} ></span>
-                  <span className="dev2Bar" style={{width: ((data.comparisonResult.experienceRes[1]/100) * 8)+'rem'}} ></span>
+                  <span className="dev1Bar" style={{width: Math.round((data.comparisonResult.experienceRes[1]/100) * 8)+'rem'}} ></span>
+                  <span className="dev2Bar" style={{width: Math.round((data.comparisonResult.experienceRes[0]/100) * 8)+'rem'}} ></span>
                 </div>
                   <div className="barChart">
                   <span className="chartLabel label">Jobs</span>
-                  <span className="dev1Bar" style={{width: ((data.comparisonResult.jobRes[0]/100) * 8)+'rem'}} ></span>
-                  <span className="dev2Bar" style={{width: ((data.comparisonResult.jobRes[1]/100) * 8)+'rem'}} ></span>
+                  <span className="dev1Bar" style={{width: Math.round((data.comparisonResult.jobRes[1]/100) * 8)+'rem'}} ></span>
+                  <span className="dev2Bar" style={{width: Math.round((data.comparisonResult.jobRes[0]/100) * 8)+'rem'}} ></span>
                 </div>
                 <div className="barChart">
                   <span className="chartLabel label">Projects</span>
-                  <span className="dev1Bar" style={{width: ((data.comparisonResult.projectRes[0]/100) * 8)+'rem'}} ></span>
-                  <span className="dev2Bar" style={{width: ((data.comparisonResult.projectRes[1]/100) * 8)+'rem'}} ></span>
+                  <span className="dev1Bar" style={{width: Math.round((data.comparisonResult.projectRes[1]/100) * 8)+'rem'}} ></span>
+                  <span className="dev2Bar" style={{width: Math.round((data.comparisonResult.projectRes[0]/100) * 8)+'rem'}} ></span>
                 </div>
                 <div className="barChart">
                   <span className="chartLabel label">Publications</span>
-                  <span className="dev1Bar" style={{width: ((data.comparisonResult.publicationRes[0]/100) * 8)+'rem'}} ></span>
-                  <span className="dev2Bar" style={{width: ((data.comparisonResult.publicationRes[1]/100) * 8)+'rem'}} ></span>
+                  <span className="dev1Bar" style={{width: Math.round((data.comparisonResult.publicationRes[1]/100) * 8)+'rem'}} ></span>
+                  <span className="dev2Bar" style={{width: Math.round((data.comparisonResult.publicationRes[0]/100) * 8)+'rem'}} ></span>
                 </div>
                 <div className="barChart">
                   <span className="chartLabel label">Awards</span>
-                  <span className="dev1Bar" style={{width: ((data.comparisonResult.awardRes[0]/100) * 8)+'rem'}} ></span>
-                  <span className="dev2Bar" style={{width: ((data.comparisonResult.awardRes[1]/100) * 8)+'rem'}} ></span>
+                  <span className="dev1Bar" style={{width: Math.round((data.comparisonResult.awardRes[1]/100) * 8)+'rem'}} ></span>
+                  <span className="dev2Bar" style={{width: Math.round((data.comparisonResult.awardRes[0]/100) * 8)+'rem'}} ></span>
                 </div>
             </div>
           </div>

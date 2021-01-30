@@ -352,7 +352,6 @@ h1 {
 
 .dev1Bar {
   background-color: #5fc556;
-  /* width: 8rem; */
   height: 0.5rem;
   position: relative;
   display: block;
@@ -362,7 +361,6 @@ h1 {
 
 .dev2Bar {
   background-color: #ff9800;
-  /* width: 4rem; */
   height: 0.5rem;
   position: relative;
   display: block;
