@@ -1,10 +1,13 @@
-5d77311 was omivrex, 2 minutes ago, message: fixed the bug in the render function to calculate the width of the bars
-2a5ccfd was omivrex, 58 minutes ago, message: added a functionality to render the data as bar charts using react also changed the comparisim algorithim to a better one
-4f4fa33 was omivrex, 6 hours ago, message: added jQuery to handle the ajaxx request and added a function to render error messages fixed some server side bugs with connection
-f5e9c09 was omivrex, 14 hours ago, message: created teh comparisim script to fixed some bugs within the compareReqScript also created a scrit for rendering the data obtained from server
-269b0cc was omivrex, 26 hours ago, message: created the compare function to be able to compare developers
-528b473 was omivrex, 28 hours ago, message: created the match function and the different functions to match developers
-6ba6ea1 was omivrex, 33 hours ago, message: made modifications to server to be able to get dvelopers data for commparisim
+5096080 was omivrex, 78 seconds ago, message: made application more responsive
+89bb807 was omivrex, 77 minutes ago, message: added my node modules to git repo
+ad01d7f was omivrex, 2 hours ago, message: fixed some minor bugs in the xhrRenderer script
+5d77311 was omivrex, 3 hours ago, message: fixed the bug in the render function to calculate the width of the bars
+2a5ccfd was omivrex, 3 hours ago, message: added a functionality to render the data as bar charts using react also changed the comparisim algorithim to a better one
+4f4fa33 was omivrex, 9 hours ago, message: added jQuery to handle the ajaxx request and added a function to render error messages fixed some server side bugs with connection
+f5e9c09 was omivrex, 17 hours ago, message: created teh comparisim script to fixed some bugs within the compareReqScript also created a scrit for rendering the data obtained from server
+269b0cc was omivrex, 29 hours ago, message: created the compare function to be able to compare developers
+528b473 was omivrex, 30 hours ago, message: created the match function and the different functions to match developers
+6ba6ea1 was omivrex, 2 days ago, message: made modifications to server to be able to get dvelopers data for commparisim
 4b293d2 was omivrex, 2 days ago, message: created AJAX script
 3d28c19 was omivrex, 2 days ago, message: reorgnization of files and creation of server
 7336145 was omivrex, 2 days ago, message: made correction
