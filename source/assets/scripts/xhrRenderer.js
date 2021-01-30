@@ -1,33 +1,23 @@
 const {Component} = React
-// import ReactDOM from ./react-dom.js
 
 const resultWrapper = $('#resultWrapper')[0]
-let dd;
 function renderData(data) {
-  dd = data.comparisonResult
-  console.log(data.comparisonResult.strengthRes[1])
-  console.log(Math.round(data.comparisonResult.strengthRes[0])/100)
-  console.log(Math.round(data.comparisonResult.educationRes[0])/100)
-  console.log(Math.round(data.comparisonResult.experienceRes[0])/100)
-  console.log(Math.round(data.comparisonResult.jobRes[0])/100)
-  console.log(Math.round(data.comparisonResult.publicationRes[0])/100)
-  console.log(Math.round(data.comparisonResult.projectRes[0])/100)
   class ResultComp extends Component {
     render() {
       return (
         <div>
           <span id="resultWrapperCloseButn" onClick = {cancel}>x</span>
           <div className="devDet">
-            <img src={data.developerImgTumb.thumb2} alt="" className="thumb"/>
-            <span className="name"> <a href=""> {data.names[1]} </a></span>
+            <img src={data.developerImgTumb.thumb2} style={{border: '5px solid #5fc556'}} alt="" className="thumb"/>
+            <span className="name">  {data.names[1]}</span>
             <li className = "details"><span>Strengths: </span><span> {data.stats[1].strengths }</span></li>
             <li className = "details"><span>Interests: </span><span> {data.stats[1].interests} </span></li>
             <li className = "details"><span>Education: </span><span> {data.stats[1].education} </span></li>
             <li className = "details"><span>Projects: </span><span> {data.stats[1].projects} </span></li>
           </div>
           <div className="devDet">
-            <img src={data.developerImgTumb.thumb1} alt="" className="thumb"/>
-            <span className="name"><a href=""> {data.names[0]}</a></span>
+            <img src={data.developerImgTumb.thumb1} style={{border: '5px solid #ff9800'}} alt="" className="thumb"/>
+            <span className="name"> {data.names[0]}</span>
             <li className = "details"><span>Strengths: </span><span> {data.stats[0].strengths} </span></li>
             <li className = "details"><span>Interests: </span><span> {data.stats[0].interests} </span></li>
             <li className = "details"><span>Education: </span><span> {data.stats[0].education} </span></li>

@@ -1,9 +1,10 @@
-2a5ccfd was omivrex, 51 seconds ago, message: added a functionality to render the data as bar charts using react also changed the comparisim algorithim to a better one
-4f4fa33 was omivrex, 5 hours ago, message: added jQuery to handle the ajaxx request and added a function to render error messages fixed some server side bugs with connection
-f5e9c09 was omivrex, 13 hours ago, message: created teh comparisim script to fixed some bugs within the compareReqScript also created a scrit for rendering the data obtained from server
-269b0cc was omivrex, 25 hours ago, message: created the compare function to be able to compare developers
-528b473 was omivrex, 27 hours ago, message: created the match function and the different functions to match developers
-6ba6ea1 was omivrex, 32 hours ago, message: made modifications to server to be able to get dvelopers data for commparisim
+5d77311 was omivrex, 2 minutes ago, message: fixed the bug in the render function to calculate the width of the bars
+2a5ccfd was omivrex, 58 minutes ago, message: added a functionality to render the data as bar charts using react also changed the comparisim algorithim to a better one
+4f4fa33 was omivrex, 6 hours ago, message: added jQuery to handle the ajaxx request and added a function to render error messages fixed some server side bugs with connection
+f5e9c09 was omivrex, 14 hours ago, message: created teh comparisim script to fixed some bugs within the compareReqScript also created a scrit for rendering the data obtained from server
+269b0cc was omivrex, 26 hours ago, message: created the compare function to be able to compare developers
+528b473 was omivrex, 28 hours ago, message: created the match function and the different functions to match developers
+6ba6ea1 was omivrex, 33 hours ago, message: made modifications to server to be able to get dvelopers data for commparisim
 4b293d2 was omivrex, 2 days ago, message: created AJAX script
 3d28c19 was omivrex, 2 days ago, message: reorgnization of files and creation of server
 7336145 was omivrex, 2 days ago, message: made correction
